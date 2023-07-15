@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreenLayout from "./Screens/HomeScreen/HomeScreenLayout";
+import MarketsScreenLayout from "./Screens/MarketsScreen/MarketsScreenLayout";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import BottomTabIcon from "react-native-vector-icons/Feather";
 import Icons from "react-native-vector-icons/Octicons";
@@ -65,11 +65,11 @@ export default function App() {
             ),
           }}
           name="Portfolio"
-          component={HomeScreenLayout}
+          component={MarketsScreenLayout}
         />
         <Tab.Screen
           name="Markets"
-          component={HomeScreenLayout}
+          component={MarketsScreenLayout}
           options={{
             headerStyle: {
               backgroundColor: "#2c53f5",
@@ -113,7 +113,7 @@ export default function App() {
             ),
           }}
           name="News"
-          component={HomeScreenLayout}
+          component={MarketsScreenLayout}
         />
       </Tab.Navigator>
     </NavigationContainer>
