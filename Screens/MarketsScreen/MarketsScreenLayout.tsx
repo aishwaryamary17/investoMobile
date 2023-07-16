@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { SearchBar } from "react-native-elements";
+import MarketsCategory from "./MarketsCategory";
 
 const MarketsScreenLayout = () => {
   return (
@@ -25,6 +26,9 @@ const MarketsScreenLayout = () => {
           //   value={search}
         />
       </View>
+      <View style={styles.marketsCategoryWrapper}>
+        <MarketsCategory />
+      </View>
     </View>
   );
 };
@@ -33,7 +37,7 @@ export default MarketsScreenLayout;
 
 const styles = StyleSheet.create({
   MarketsHeaderWrapper: {
-    paddingVertical: 20,
+    paddingTop: 20,
     paddingHorizontal: 20,
     backgroundColor: "#2c53f5",
   },
@@ -42,5 +46,8 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     color: "#ffffff",
     paddingBottom: 5,
+  },
+  marketsCategoryWrapper: {
+    height: "100%",
   },
 });
