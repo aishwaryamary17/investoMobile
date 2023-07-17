@@ -1,30 +1,33 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { SearchBar } from "react-native-elements";
+import React from "react";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import MarketsCategory from "./MarketsCategory";
+import { useNavigation } from "@react-navigation/native";
 
 const MarketsScreenLayout = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <View style={styles.MarketsHeaderWrapper}>
         <Text style={styles.MarketsHeaderText}>Markets</Text>
-        <SearchBar
-          searchIcon={{ size: 24, color: "#ffffff" }}
-          //   onChangeText={(text) => searchFilterFunction(text)}
-          //   onClear={(text) => searchFilterFunction('')}
-          placeholder="Search markets"
-          containerStyle={{
-            backgroundColor: "#2c53f5",
-            borderBottomWidth: 0,
-            borderTopWidth: 0,
-            borderColor: "#2c53f5",
-            paddingTop: 10,
-            paddingHorizontal: 0,
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            navigation.navigate("Explore");
           }}
-          inputContainerStyle={{ backgroundColor: "#5c7cf7", borderRadius: 10 }}
-          inputStyle={{ color: "#ffffff" }}
-          //   value={search}
-        />
+        >
+          <TextInput
+            editable={false}
+            placeholder="Search for stocks"
+            placeholderTextColor="#ffffff"
+            style={styles.input}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.marketsCategoryWrapper}>
         <MarketsCategory />
@@ -49,5 +52,12 @@ const styles = StyleSheet.create({
   },
   marketsCategoryWrapper: {
     height: "100%",
+  },
+  input: {
+    backgroundColor: "#5c7cf7",
+    borderRadius: 10,
+    color: "#ffffff",
+    paddingHorizontal: 20,
+    height: 50,
   },
 });
