@@ -3,7 +3,7 @@
 ## Clone the Repository
 
 1. Clone the Repository
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/aishwaryamary17/investoMobile.git
 Replace your-username and your-repo with your GitHub username and repository name.
 2. Navigate to the project directory:
 * cd your-repo
